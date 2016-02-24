@@ -1,0 +1,112 @@
+$header: 'Oswald', sans-serif;
+$text: 'Lato', sans-serif;
+$text-colour: #333333;
+$cat-colour: #02aded;
+$title-colour: #7a7b7c;
+
+@mixin headers($size, $weight, $colour){
+  color: $colour;
+  font-family: $header;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+body{
+  font-family: $text;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 27px;
+  color: $text-colour;
+  background-color: #f8f8f8;
+}
+header{
+  .layer{
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    left: 0;
+    top: 40%;
+  }
+  h1{
+    @include headers(70px, 400, #FFFFFF);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  h2{
+    @include headers(50px, 300, #FFFFFF);
+    text-align: center;
+  }
+  .homepage-hero-module {
+      border-right: none;
+      border-left: none;
+      position: relative;
+  }
+  .no-video .video-container video,
+  .touch .video-container video {
+      display: none;
+  }
+  .no-video .video-container .poster,
+  .touch .video-container .poster {
+      display: block !important;
+  }
+  .video-container {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: #000;
+  }
+  .video-container .poster img {
+      width: 100%;
+      bottom: 0;
+      position: absolute;
+  }
+  .video-container .filter {
+      z-index: 100;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.4);
+      width: 100%;
+  }
+  .video-container video {
+      position: absolute;
+      z-index: 0;
+      bottom: 0;
+  }
+  .video-container video.fillWidth {
+      width: 100%;
+  }
+}
+
+.synopsis{
+  margin-top: 50px;
+  background: #FFFFFF;
+  padding: 30px;
+}
+.posts{
+  article{
+    margin-top: 50px;
+    background-color: #FFFFFF;
+    height: 200px;
+  }
+  article{
+    .category{
+      @include headers(18px, 300, $cat-colour);
+      text-transform: uppercase;
+      line-height: 29px;
+    }
+    .category:hover{
+      text-decoration: none;
+      color: $cat-colour;
+    }
+    .title{
+      @extend .category;
+      color: $title-colour;
+    }
+    .title:hover{
+      text-decoration: none;
+      color: $title-colour;
+    }
+  }
+}

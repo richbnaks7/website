@@ -1,0 +1,5 @@
+Theme name:    RichBanks
+Description:   This is the theme for RichBanks.co.uk
+Author name:   Rich Banks
+Author site:   http://www.richbanks.co.uk
+License:       
