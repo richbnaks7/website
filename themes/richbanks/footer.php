@@ -1,20 +1,6 @@
-		<div class="wrap">
-	            <footer id="bottom">
-	                <small>&copy; <?php echo date('Y'); ?> <?php echo site_name(); ?>. All rights reserved.</small>
-
-	                <ul role="navigation">
-	                    <li><a href="<?php echo rss_url(); ?>">RSS</a></li>
-	                    <?php if(twitter_account()): ?>
-	                    <li><a href="<?php echo twitter_url(); ?>">@<?php echo twitter_account(); ?></a></li>
-	                    <?php endif; ?>
-
-	                    <li><a href="<?php echo base_url('admin'); ?>" title="Administer your site!">Admin area</a></li>
-
-	                    <li><a href="<?php echo base_url(); ?>" title="Return to my website.">Home</a></li>
-	                </ul>
-	            </footer>
-
-	        </div>
+		<footer class="container">
+			<p>If you have any questions, feedback or would just like to get in touch, please email me at &#104;&#101;&#108;&#108;&#111;&#64;&#114;&#105;&#99;&#104;&#98;&#97;&#110;&#107;&#115;&#46;&#99;&#111;&#46;&#117;&#107;</p>
+		</footer>
 
 				<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 				<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
