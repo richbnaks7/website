@@ -124,7 +124,7 @@ Route::get($posts_page->slug . '/(:any)/edit', function($slug) use($posts_page) 
     if (!$post = Post::slug($slug) or Auth::guest()) {
         return Response::create(new Template('404'), 404);
     }
-    
+
     return Response::redirect('/admin/posts/edit/' . $post->id);
 });
 
@@ -135,7 +135,7 @@ Route::get('(:all)/edit', function($slug) use($posts_page) {
     if (!$page = Page::slug($slug) or Auth::guest()) {
         return Response::create(new Template('404'), 404);
     }
-    
+
     return Response::redirect('/admin/pages/edit/' . $page->id);
 });
 
@@ -295,4 +295,33 @@ Route::get('(:all)', function($uri) {
 	}
 
 	return new Template('page');
+});
+/**
+ * Sitemap
+ */
+Route::get('sitemap.xml', function() {
+    $sitemap  = '<?xml version="1.0" encoding="UTF-8"?>';
+    $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+    // Pages
+    $query = Page::where('status', '=', 'published');
+    foreach($query->get() as $page) {
+        $sitemap .= '<url>';
+        $sitemap .= '<loc>' . full_url() . $page->slug . '</loc>';
+        $sitemap .= '<changefreq>weekly</changefreq>';
+        $sitemap .= '</url>';
+    }
+
+    // Posts
+    $query = Post::where('status', '=', 'published')->sort(Base::table('posts.created'), 'desc');
+    foreach($query->get() as $article) {
+        $sitemap .= '<url>';
+        $sitemap .= '<loc>' . Uri::full(Registry::get('posts_page')->slug . '/' . $article->slug) . '</loc>';
+        $sitemap .= '<lastmod>' . date("Y-m-d", strtotime($article->created)) . '</lastmod>';
+        $sitemap .= '</url>';
+    }
+
+    $sitemap .= '</urlset>';
+
+    return Response::create($sitemap, 200, array('content-type' => 'application/xml'));
 });
