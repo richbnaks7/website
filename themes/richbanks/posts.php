@@ -11,7 +11,7 @@
 					<img src="<?php echo theme_url('videos/Hello-World.jpg') ?>" alt="">
 			</div>
 			<div class="layer">
-				<h1>Rich Banks</h1>
+				<h1>Richard Banks</h1>
 				<h2>Personal Blog</h2>
 			</div>
 	</div>

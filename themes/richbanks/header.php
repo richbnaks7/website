@@ -50,7 +50,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a id="navbar-brand" href="http://www.richbanks.co.uk">Rich Banks</a>
+					<a id="navbar-brand" href="http://www.richbanks.co.uk"><img src="<?php echo theme_url('img/logo.png'); ?>" alt="Rich Banks" ></a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,18 +59,12 @@
 
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
-		        <?php if(has_menu_items()):
-		  				while(menu_items()): ?>
-		  			<li <?php echo (menu_active() ? 'class="active"' : ''); ?>>
-		  				<a href="<?php echo menu_url(); ?>" title="<?php echo menu_title(); ?>">
-		  					<?php echo menu_name(); ?>
-		  				</a>
-		  			</li>
-		  			<?php endwhile;
-		  				endif; ?>
+						<?php foreach(Category::dropdown() as $id => $category): ?>
+						    <li>
+									<a href="<?php ?>"><?php echo $category; ?></a>
+								</li>
+						<?php endforeach; ?>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
-
-		

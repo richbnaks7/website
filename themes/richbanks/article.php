@@ -1,17 +1,19 @@
 <?php theme_include('header'); ?>
+<section class="container blog-article" id="article-<?php echo article_id(); ?>">
+	<article>
 
-		<section class="content wrap" id="article-<?php echo article_id(); ?>">
-			<h1><?php echo article_title(); ?></h1>
+		<h1><span class="article-category">Homestead: </span><?php echo article_title(); ?></h1>
+		<p class="details">
+			Written by <?php echo article_author(); ?> on <?php echo article_date(); ?>
+		</p>
+		<p>
+			<?php echo article_markdown(); ?>
+		</p>
 
-			<article>
-				<?php echo article_markdown(); ?>
-			</article>
+	</article>
 
-			<section class="footnote">
-				<!-- Unfortunately, CSS means everything's got to be inline. -->
-				<p>This article is my <?php echo numeral(article_number(article_id()), true); ?> oldest. It is <?php echo count_words(article_markdown()); ?> words long<?php if(comments_open()): ?>, and it’s got <?php echo total_comments() . pluralise(total_comments(), ' comment'); ?> for now.<?php endif; ?> <?php echo article_custom_field('attribution'); ?></p>
-			</section>
-		</section>
+</section>
+
 
 		<?php if(comments_open()): ?>
 		<section class="comments">
