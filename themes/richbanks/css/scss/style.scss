@@ -180,13 +180,20 @@ header{
   .article-category{
     @include headers(42px, 300, $cat-colour);
   }
+  .article-category:hover{
+    text-decoration: none;
+  }
   .details{
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
   img{
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+  .addthis_sharing_toolbox{
+    margin-bottom: 50px;
+    text-align: center;
   }
 }
 footer{

@@ -59,11 +59,11 @@
 
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
-						<?php foreach(Category::dropdown() as $id => $category): ?>
-						    <li>
-									<a href="<?php ?>"><?php echo $category; ?></a>
-								</li>
-						<?php endforeach; ?>
+						<?php while(categories()): ?>
+							<li>
+								<a href="<?php echo category_url(); ?>#posts"><?php echo category_title(); ?></a>
+							</li>
+						<?php endwhile; ?>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->

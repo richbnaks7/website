@@ -25,7 +25,7 @@
 	</div>
 </section>
 
-<section class="container posts">
+<section class="container posts" id="posts">
 	<?php if(has_posts()): ?>
 
 		<?php $i = 0; while(posts()): ?>
@@ -41,10 +41,11 @@
 				<time datetime="<?php echo date(DATE_W3C, article_time()); ?>" class="pull-right"><?php echo relative_time(article_time()); ?></time>
 				<div class="space"></div>
 				<h3>
-					<a class="category">Laravel: <?php echo category_title(); ?></a>
+					<a href="<?php echo article_category_url(); ?>#posts" class="category"><?php echo article_category(); ?>: </a>
 					<a href="<?php echo article_url(); ?>" title="<?php echo article_title(); ?>" class="title"><?php echo article_title(); ?></a>
 				</h3>
 			</article>
+
 		<?php endwhile; ?>
 
 		<?php if(has_pagination()): ?>

@@ -2,10 +2,12 @@
 <section class="container blog-article" id="article-<?php echo article_id(); ?>">
 	<article>
 
-		<h1><span class="article-category">Homestead: </span><?php echo article_title(); ?></h1>
+		<h1><a href="<?php echo article_category_url(); ?>#posts" class="article-category"><?php echo article_category(); ?>: </a><?php echo article_title(); ?></h1>
 		<p class="details">
 			Written by <?php echo article_author(); ?> on <?php echo article_date(); ?>
 		</p>
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<div class="addthis_sharing_toolbox"></div>
 		<p>
 			<?php echo article_markdown(); ?>
 		</p>
