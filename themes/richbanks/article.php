@@ -53,7 +53,7 @@
                     </ul>
                 	</div>
 								<?php endif; ?>
-                <div class="tab-pane" id="add-comment">
+                <div class="tab-pane <?php if(!has_comments()): ?> active <?php endif; ?>" id="add-comment">
                     <form action="<?php echo comment_form_url(); ?>#comments-tabs" method="post" class="form-horizontal" id="commentForm" role="form">
 											<?php echo comment_form_notifications(); ?>
 												<div class="form-group">
@@ -65,7 +65,7 @@
 												<div class="form-group">
 													<label for="email" class="col-sm-2 control-label">Your Email:</label>
 													<div class="col-sm-10">
-															<input type="text" class="form-control" name="email" id="email">
+															<input type="email" class="form-control" name="email" id="email">
 													</div>
 												</div>
                         <div class="form-group">
