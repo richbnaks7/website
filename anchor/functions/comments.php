@@ -10,7 +10,7 @@ function has_comments() {
 	}
 
 	if( ! $comments = Registry::get('comments')) {
-		$comments = Comment::where('status', '=', 'approved')->where('post', '=', $itm->id)->get();
+		$comments = Comment::where('status', '=', 'approved')->where('post', '=', $itm->id)->sort('date', 'desc')->get();
 
 		$comments = new Items($comments);
 

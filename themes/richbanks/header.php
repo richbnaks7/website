@@ -50,7 +50,6 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-					<a id="navbar-brand" href="http://www.richbanks.co.uk"><img src="<?php echo theme_url('img/logo.png'); ?>" alt="Rich Banks" ></a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,6 +58,9 @@
 
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="http://www.richbanks.co.uk">Home</a>
+						</li>
 						<?php while(categories()): ?>
 							<li>
 								<a href="<?php echo category_url(); ?>#posts"><?php echo category_title(); ?></a>
