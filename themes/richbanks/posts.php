@@ -36,7 +36,7 @@
 
 			<article class="col-sm-4">
 				<a href="<?php echo article_url(); ?>">
-					<img <?php echo reset($firstItem) ?> alt="<?php echo article_title(); ?>" class="img-responsive">
+					<img <?php echo reset($firstItem) ?> alt="<?php echo article_title(); ?>" class="img-main img-responsive">
 				</a>
 				<time datetime="<?php echo date(DATE_W3C, article_time()); ?>" class="pull-right"><?php echo relative_time(article_time()); ?></time>
 				<div class="space"></div>
