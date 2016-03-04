@@ -34,7 +34,7 @@
 				list($firstItem) = $src;
 			?>
 
-			<article class="col-md-4 col-sm-6 col-xs-12">
+				<article class="post-box col-md-4 col-sm-6 col-xs-12">
 				<div class="boxes">
 					<a href="<?php echo article_url(); ?>">
 						<img <?php echo reset($firstItem) ?> alt="<?php echo article_title(); ?>" class="img-main img-responsive">
