@@ -8,7 +8,7 @@
 					<source src="<?php echo theme_url('videos/Hello-World.webm') ?>" type="video/webm" />
 			</video>
 			<div class="poster hidden">
-					<img src="<?php echo theme_url('videos/Hello-World.jpg') ?>" alt="">
+					<img src="<?php echo theme_url('videos/Hello-World.jpg') ?>" alt="Richard Banks">
 			</div>
 			<div class="layer">
 				<h1>Richard Banks</h1>
