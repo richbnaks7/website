@@ -34,16 +34,18 @@
 				list($firstItem) = $src;
 			?>
 
-			<article class="col-sm-4">
-				<a href="<?php echo article_url(); ?>">
-					<img <?php echo reset($firstItem) ?> alt="<?php echo article_title(); ?>" class="img-main img-responsive">
-				</a>
-				<time datetime="<?php echo date(DATE_W3C, article_time()); ?>" class="pull-right"><?php echo relative_time(article_time()); ?></time>
-				<div class="space"></div>
-				<h3>
-					<a href="<?php echo article_category_url(); ?>#posts" class="category"><?php echo article_category(); ?>: </a>
-					<a href="<?php echo article_url(); ?>" title="<?php echo article_title(); ?>" class="title"><?php echo article_title(); ?></a>
-				</h3>
+			<article class="col-md-4 col-sm-6 col-xs-12">
+				<div class="boxes">
+					<a href="<?php echo article_url(); ?>">
+						<img <?php echo reset($firstItem) ?> alt="<?php echo article_title(); ?>" class="img-main img-responsive">
+					</a>
+					<time datetime="<?php echo date(DATE_W3C, article_time()); ?>" class="pull-right"><?php echo relative_time(article_time()); ?></time>
+					<div class="space"></div>
+					<h3>
+						<a href="<?php echo article_category_url(); ?>#posts" class="category"><?php echo article_category(); ?>: </a>
+						<a href="<?php echo article_url(); ?>" title="<?php echo article_title(); ?>" class="title"><?php echo article_title(); ?></a>
+					</h3>
+				</div>
 			</article>
 
 		<?php endwhile; ?>
